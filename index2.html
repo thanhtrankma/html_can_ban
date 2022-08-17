@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      p::first-line {
+        color: #ff0000;
+        font-variant: small-caps;
+      }
+      p::first-letter {
+        font-size: 36px;
+        font-weight: 700;
+        color: purple;
+      }
+      *::selection {
+        background-color: aqua;
+        color: blue;
+      }
+      li::marker {
+        content: "⌚ ";
+      }
+      h1::after {
+        content: "After content";
+        background-color: blue;
+        color: white;
+      }
+      h1::before {
+        content: "Before content";
+        background-color: green;
+        color: white;
+      }
+      img {
+        filter: grayscale(54%) sepia(49%) hue-rotate(206deg) saturate(536%);
+        -webkit-filter: grayscale(54%) sepia(49%) hue-rotate(206deg)
+          saturate(536%);
+        -moz-filter: grayscale(54%) sepia(49%) hue-rotate(206deg) saturate(536%);
+      }
+
+      .lds-ring {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+      }
+      .lds-ring div {
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border: 8px solid #000;
+        border-radius: 50%;
+        animation: lds-ring 1.2s linear infinite;
+        border-color: #000 transparent transparent transparent;
+      }
+      .lds-ring div:nth-child(1) {
+        animation-delay: -0.45s;
+      }
+      .lds-ring div:nth-child(2) {
+        animation-delay: -0.3s;
+      }
+      .lds-ring div:nth-child(3) {
+        animation-delay: -0.15s;
+      }
+      @keyframes lds-ring {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .lds-ripple {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+      }
+      .lds-ripple div {
+        position: absolute;
+        border: 4px solid #000;
+        opacity: 1;
+        border-radius: 50%;
+        animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+      }
+      .lds-ripple div:nth-child(2) {
+        animation-delay: -0.5s;
+      }
+      @keyframes lds-ripple {
+        0% {
+          top: 36px;
+          left: 36px;
+          width: 0;
+          height: 0;
+          opacity: 0;
+        }
+        4.9% {
+          top: 36px;
+          left: 36px;
+          width: 0;
+          height: 0;
+          opacity: 0;
+        }
+        5% {
+          top: 36px;
+          left: 36px;
+          width: 0;
+          height: 0;
+          opacity: 1;
+        }
+        100% {
+          top: 0px;
+          left: 0px;
+          width: 72px;
+          height: 72px;
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      You can use the ::first-line pseudo-element to add a special effect to the
+      first line of a text. Some more text. And even more, and more, and more,
+      and more, and more, and more, and more, and more, and more, and more, and
+      more, and more.
+    </p>
+
+    <ul>
+      <li>Tôi là</li>
+      <li>Techmaster</li>
+      <li>Bạn là:</li>
+      <li>Học viên của tôi</li>
+    </ul>
+
+    <h1>Content</h1>
+
+    <img src="images/vn.jpeg" alt="Cờ VN" width="600" />
+
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="lds-ripple">
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>
